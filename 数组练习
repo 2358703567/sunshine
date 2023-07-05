@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<Windows.h>
+#include<stdlib.h>
+
+
+int main()
+{
+	char arr1[] = { "welcome to home!!!" };
+	char arr2[] = { "##################" 
+ 
+	int left = 0;
+  //strlen()函数算出字符数组的个数(不包含"\0")
+	int right = strlen(arr2) - 1;
+ 
+	while(left<=right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+  
+		printf("%s\n", arr2);
+
+    //#include<Windows.h>，停止0.5秒后在继续（单位是毫秒）
+		Sleep(500);
+  
+    //#include<stdlib.h>，这个命令表示清屏
+		system("cls");
+  
+		left++;
+		right--;
+	}
+	printf("%s\n", arr2);
+	return 0;
+}
