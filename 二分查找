@@ -5,12 +5,14 @@
 	int right = sz - 1;
 	int k = 7;
 
+	//left必须小于等于right
 	while (left <= right)
 	{
 		//写在循环体内部
 		//int mid = (right + left) / 2;
 		//两种方法都可以，下面的方法不会让int类型超出范围
 		int mid = left + (right - left) / 2
+
 		if (arr[mid] > k)
 		{
 			right = mid - 1;
