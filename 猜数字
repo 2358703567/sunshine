@@ -1,0 +1,63 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdlib.h>
+#include<stdio.h>
+
+
+void meun()
+{
+	printf("**********************\n");
+	printf("******** 1.play ******\n");
+	printf("******** 0.exit *******\n");
+	printf("**********************\n");
+}
+
+//生成随机数
+void game()
+{
+	int guess = 0;
+	//rand()函数0~RAND_MAX(32767)
+	int ret = rand()%100+1;//生成随机数的函数，取值在1-100之间
+	printf("0-100之间猜数字\n");
+	while (1)
+	{
+		printf("请输入:>");
+		scanf("%d", &guess);
+		if (guess < ret)
+			printf("猜小了\n");
+		else if (guess > ret)
+			printf("猜大了\n");
+		else
+		{
+			printf("猜对了\n");
+			printf("\n");
+			break;
+		}
+	}
+
+}
+int main()
+{
+	int chose = 0;
+	srand((unsigned int)time(NULL));//控制rand()函数的随机性，利用时间戳time()函数，srand()函数要求返回无符号整型
+
+
+	do
+	{
+		meun();
+		printf("请输入：>");
+		scanf("%d", &chose);
+		switch(chose)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏");
+			break;
+		default:
+			printf("输入错误，请重新输入");
+			break;
+		}
+	} while (chose);
+	return 0;
+}
