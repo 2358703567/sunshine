@@ -38,6 +38,8 @@ void game()
 int main()
 {
 	int chose = 0;
+
+	//调用一次就可以，放在循环外面，不用频繁调用。
 	srand((unsigned int)time(NULL));//控制rand()函数的随机性，利用时间戳time()函数，srand()函数要求返回无符号整型
 
 
