@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+
+//利用指针锁定地址，形参
+void swap(int* px, int* py)
+{
+
+// *px代表存在内存中的值
+	int z = *px;
+	*px = *py;
+	*py = z;
+}
+
+//当实参传递给形参时，形参是实参的一份拷贝，在内存中是两个不一样的地址。
+//形参的修改不会影响实参。
+int main()
+{
+	int a = 0;
+	int	b = 0;
+
+	scanf("%d %d", &a, &b);
+	printf("交换前：a=%d,b=%d\n", a, b);
+
+	//交换
+  //传递的a和b是实参
+	swap(&a, &b);
+	printf("交换后：a=%d,b=%d\n", a, b);
+	return 0;
+}
