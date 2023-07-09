@@ -1,4 +1,4 @@
-#include<stdio.h>
+/*#include<stdio.h>
 #include<math.h>
 
 int main()
@@ -27,6 +27,56 @@ int main()
 		}
 
 		if(flag == 1)
+		{
+			printf("%d ", i);
+			count++;
+		}
+
+	}
+	printf("\n%d\n", count);
+	return 0;
+}*/
+
+
+
+
+
+
+
+//封装函数的用法
+
+#include<stdio.h>
+#include<math.h>
+
+
+if_premise(int n)
+{
+	//flag是1，表示是素数
+	int j = 0;
+	//2 到 i-1之间的数去试除
+	//for (j = 2; j <= i - 1; j++)
+	for (j = 2; j <= sqrt(n); j++)
+	{
+		if (n % j == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int main()
+{
+
+	//判断100-200之间的素数，只能被1和它本身整除。
+
+	int i = 0;
+	int j = 0;
+	int count = 0;
+	//偶数没有素数，可以直接从奇数里筛选
+	for (i = 101; i <= 200; i+=2)
+	{
+		if (if_premise(i))
 		{
 			printf("%d ", i);
 			count++;
