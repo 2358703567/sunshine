@@ -1,0 +1,17 @@
+int main()
+{
+
+	int count = 0;
+	int year = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+		//判断year是不是闰年
+		if (if_year(year))
+		{
+			printf("%d ", year);
+			count++;
+		}
+	}
+	printf("\n%d", count);
+	return 0;
+}
