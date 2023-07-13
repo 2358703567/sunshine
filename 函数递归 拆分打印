@@ -1,0 +1,25 @@
+//函数的递归
+// ｛
+//		1、存在限制条件，当满足这个限制条件时，递归便不在继续
+//		2、每次递归调用之后越来越接近这个限制条件 
+// ｝
+//按顺序打印每一位
+void print(unsigned int n)
+{
+	if (n > 9)//限制条件
+	{
+		print(n / 10);//优先打印最深层print里的数，先打印最深层里的1 再是2...
+	}
+
+	printf("%u ", n % 10);//4
+}
+
+int main()
+{
+	unsigned int num = 0;
+	scanf("%u", &num);
+	print(num);
+
+
+	return 0;
+}
