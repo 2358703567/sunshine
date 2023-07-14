@@ -1,0 +1,19 @@
+//统计一个字符串的长度，函数内不允许使用临时变量
+int my_strlen(char* str)
+{
+	if (*str != '\0')
+	{
+		return 1 + my_strlen(str + 1);
+	}
+	else
+		return 0;
+}
+
+int main()
+{
+	char arr[] = { "abcdefg" };
+	int len = my_strlen(arr);
+	printf("%d", len);
+
+	return 0;
+}
